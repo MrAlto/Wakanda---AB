@@ -17,7 +17,7 @@ describe("Apartment opts", function () {
     await this.building.setAptContract(this.apartment.address);
   });
 
-  it("Should return merge two appts", async function () {
+  it("Merge two appts", async function () {
     const [deployer] = await ethers.getSigners();
     await this.building.mint(deployer.address, 1, 6000, 1);
     await this.building.buildApt(1, 1240, 1, deployer.address);
@@ -30,7 +30,7 @@ describe("Apartment opts", function () {
     expect(Number(merged.squareMeters) / 10 ** 18).to.equal(1240 + 789);
   });
 
-  it("Should return split in three on appt", async function () {
+  it("Split in three an appt", async function () {
     const [deployer] = await ethers.getSigners();
     await this.building.mint(deployer.address, 1, 6000, 1);
     await this.building.buildApt(1, 1240, 1, deployer.address);
